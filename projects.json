@@ -1,0 +1,21 @@
+[
+    {
+      "name": "Project One",
+      "description": "This is the first project.",
+      "link": "https://example.com/project-one",
+      "type": "Web Development"
+    },
+    {
+      "name": "Project Two",
+      "description": "This is the second project.",
+      "link": "https://example.com/project-two",
+      "type": "Machine Learning"
+    },
+    {
+      "name": "Project Three",
+      "description": "This is the third project.",
+      "link": "https://example.com/project-three",
+      "type": "Mobile App"
+    }
+  ]
+  
