@@ -1,14 +1,28 @@
 import localFont from "next/font/local";
+import { ThemeProvider } from "next-themes";
 import "./globals.css";
 
-const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
+const JetBrainsMono = localFont({
+  src: "./fonts/JetBrainsMono.ttf",
+  variable: "--font-jetbrainsmono",
   weight: "100 900",
 });
-const geistMono = localFont({
-  src: "./fonts/GeistMonoVF.woff",
-  variable: "--font-geist-mono",
+
+const DecimaPro = localFont({
+  src: "./fonts/DecimaPro.ttf",
+  variable: "--font-decimapro",
+  weight: "100 900",
+});
+
+const PaniPuri = localFont({
+  src: "./fonts/Panipuri.otf",
+  variable: "--font-panipuri",
+  weight: "100 900",
+});
+
+const Neutro = localFont({
+  src: "./fonts/Neutro.otf",
+  variable: "--font-neutro",
   weight: "100 900",
 });
 
@@ -19,11 +33,15 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        {children}
+    <html className="bg-neutral-950" lang="en">
+      <body className={`${DecimaPro.variable} ${JetBrainsMono.variable} ${PaniPuri.variable} ${Neutro.variable} antialiased`}>
+        <ThemeProvider
+            attribute="class"
+            defaultTheme="dark"
+            disableTransitionOnChange
+          >
+            {children}
+        </ThemeProvider>
       </body>
     </html>
   );
