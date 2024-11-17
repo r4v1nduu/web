@@ -4,7 +4,7 @@ import { IoMdHand } from "react-icons/io";
 export default function Hero() {
   return (
     <div>
-      <div className="flex justify-center mt-12">
+      <div className="flex justify-center mt-24">
         <div className="relative inline-block">
           <Image
             src="./Images/Me.jpg"
