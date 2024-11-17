@@ -1,5 +1,4 @@
-"use client";
-import { useEffect, useState } from "react";
+import projects from "../../public/projects.json";
 import { Card, CardContent } from "@/components/ui/card";
 import { HiExternalLink } from "react-icons/hi";
 import {
@@ -11,16 +10,6 @@ import {
 } from "@/components/ui/carousel";
 
 export default function Projects() {
-  const [projects, setProjects] = useState([]);
-
-  useEffect(() => {
-    // Fetch the project data from the JSON file
-    fetch("/projects.json")
-      .then((response) => response.json())
-      .then((data) => setProjects(data))
-      .catch((error) => console.error("Error loading projects:", error));
-  }, []);
-
   return (
     <div className="my-6">
       <p className="text-center font-main text-md mb-2">PROJECTS</p>

@@ -1,5 +1,4 @@
-"use client";
-import { useEffect, useState } from "react";
+import workExperience from "../../public/workExperience.json";
 import {
   Accordion,
   AccordionItem,
@@ -8,20 +7,8 @@ import {
 } from "@/components/ui/accordion";
 
 export default function WorkExperience() {
-  const [workExperience, setWorkExperience] = useState(null);
-
-  useEffect(() => {
-    // Fetch data from the JSON file in the public folder
-    fetch("/workExperience.json")
-      .then((response) => response.json())
-      .then((data) => setWorkExperience(data))
-      .catch((error) =>
-        console.error("Error loading work experience data:", error)
-      );
-  }, []);
-
   if (!workExperience) {
-    return <p>Loading...</p>; // Add a loading state if data is still being fetched
+    return <p>Loading...</p>; // Optional loading state
   }
 
   return (

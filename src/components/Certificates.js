@@ -1,22 +1,13 @@
-"use client";
-import { useEffect, useState } from "react";
+import certificates from "../../public/certificates.json";
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import { BiSolidCertification, BiCertification } from "react-icons/bi";
+import { BiSolidCertification } from "react-icons/bi";
 
 export default function Certificates() {
-  const [certificates, setCertificates] = useState([]);
-
-  useEffect(() => {
-    fetch("/certificates.json")
-      .then((response) => response.json())
-      .then((data) => setCertificates(data));
-  }, []);
-
   return (
     <div>
       <Accordion type="single" collapsible className="border-t">
