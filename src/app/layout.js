@@ -34,13 +34,15 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html className="bg-neutral-950" lang="en">
-      <body className={`${DecimaPro.variable} ${JetBrainsMono.variable} ${PaniPuri.variable} ${Neutro.variable} antialiased`}>
+      <body
+        className={`${DecimaPro.variable} ${JetBrainsMono.variable} ${PaniPuri.variable} ${Neutro.variable} antialiased`}
+      >
         <ThemeProvider
-            attribute="class"
-            defaultTheme="dark"
-            disableTransitionOnChange
-          >
-            {children}
+          attribute="class"
+          defaultTheme="dark"
+          disableTransitionOnChange
+        >
+          {children}
         </ThemeProvider>
       </body>
     </html>

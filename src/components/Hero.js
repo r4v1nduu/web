@@ -1,5 +1,3 @@
-"use client";
-
 import Image from "next/image";
 import { IoMdHand } from "react-icons/io";
 
@@ -9,7 +7,7 @@ export default function Hero() {
       <div className="flex justify-center mt-12">
         <div className="relative inline-block">
           <Image
-            src="/Images/Me.jpg"
+            src="./Images/Me.jpg"
             alt="Me"
             width={140}
             height={140}

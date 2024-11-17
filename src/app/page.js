@@ -1,5 +1,3 @@
-"use client";
-
 import Certificates from "@/components/Certificates";
 import Footer from "@/components/Footer";
 import Hero from "@/components/Hero";
