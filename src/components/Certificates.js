@@ -6,41 +6,39 @@ import {
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
-} from "@/components/ui/accordion"
+} from "@/components/ui/accordion";
 import { BiSolidCertification, BiCertification } from "react-icons/bi";
 
 export default function Certificates() {
+  const [certificates, setCertificates] = useState([]);
 
-    const [certificates, setCertificates] = useState([]);
-  
-    useEffect(() => {
-      fetch("/certificates.json")
-        .then((response) => response.json())
-        .then((data) => setCertificates(data));
-    }, []);
-  
-    return (
-      <div>
+  useEffect(() => {
+    fetch("/certificates.json")
+      .then((response) => response.json())
+      .then((data) => setCertificates(data));
+  }, []);
 
-        <Accordion type="single" collapsible>
-        <AccordionItem value="certs">
-            <AccordionTrigger className="flex justify-start font-main text-md">
-            <BiSolidCertification className="mr-2"/>
-              CERTIFICATES
-            </AccordionTrigger>
-            <AccordionContent>
+  return (
+    <div>
+      <Accordion type="single" collapsible className="border-t">
+        <AccordionItem value="certificates">
+          <AccordionTrigger className="flex justify-start gap-2 font-main text-md">
+            <BiSolidCertification />
+            CERTIFICATES
+          </AccordionTrigger>
+          <AccordionContent>
             <ul>
-                {certificates.map((cert) => (
+              {certificates.map((cert) => (
                 <li key={cert.id} className="mb-2">
-                    <a href={cert.link} className="hover:cursor-pointer">{cert.name}</a>
+                  <a href={cert.link} className="hover:cursor-pointer">
+                    {cert.name}
+                  </a>
                 </li>
-                ))}
+              ))}
             </ul>
-            </AccordionContent>
+          </AccordionContent>
         </AccordionItem>
-        </Accordion>
-
-      </div>
-    );
-  }
-  
+      </Accordion>
+    </div>
+  );
+}
